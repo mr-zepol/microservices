@@ -1,3 +1,5 @@
 
 set_env.sh
 .DS_Store
+udagram-api-users/package-lock.json
+udagram-api-feed/package-lock.json

@@ -15,11 +15,11 @@ before_script:
 
 script:
   - docker --version # print the version for logging
-  - docker build -t udagram-frontend .
+  - docker build -t udagram-frontend ./udagram-frontend
   - docker tag udagram-frontend zepol1357/udagram-frontend:latest
-  - docker build -t udagram-api-users .
+  - docker build -t udagram-api-users ./udagram-api-users
   - docker tag udagram-api-users zepol1357/udagram-api-users:latest
-  - docker build -t udagram-api-feed .
+  - docker build -t udagram-api-feed ./udagram-api-feed
   - docker tag udagram-api-feed zepol1357/udagram-api-feed:latest
 
 after_success:

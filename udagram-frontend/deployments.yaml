@@ -18,13 +18,6 @@ spec:
       - image: zepol1357/udagram-frontend
         name: udagram-frontend
         imagePullPolicy: Always
-        resources:
-          requests:
-            memory: "64Mi"
-            cpu: "250m"
-          limits:
-            memory: "1024Mi"
-            cpu: "500m"
         ports:
         - containerPort: 80
       restartPolicy: Always    

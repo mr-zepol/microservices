@@ -19,6 +19,8 @@ script:
   - docker tag udagram-frontend zepol1357/udagram-frontend:latest
   - docker build -t udagram-api-users ./udagram-api-users
   - docker tag udagram-api-users zepol1357/udagram-api-users:latest
+  - docker build -t udagram-reverseproxy ./udagram-reverseproxy
+  - docker tag udagram-reverseproxy zepol1357/udagram-reverseproxy:latest
   - docker build -t udagram-api-feed ./udagram-api-feed
   - docker tag udagram-api-feed zepol1357/udagram-api-feed:latest
 
@@ -26,4 +28,5 @@ after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
   - docker push zepol1357/udagram-frontend:latest
   - docker push zepol1357/udagram-api-users:latest
+  - docker push zepol1357/udagram-reverseproxy:latest
   - docker push zepol1357/udagram-api-feed:latest

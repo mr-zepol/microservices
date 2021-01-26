@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    service: api-user
+  name: api-user
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: api-user
+  template:
+    metadata:
+      labels:
+        app: api-user
+    spec:
+      containers:
+      - image: zepol1357/udagram-api-users
+        name: api-user
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 80
+      restartPolicy: Always    
